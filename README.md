@@ -27,10 +27,10 @@ opnsense-bind9 --conf /usr/local/etc/opnsense-bind9.conf
 
 Run the program through cron. How often you run it is up to you.
 
-## Bind9 config setup
+## Example Bind9 config setup
 Since this program overwrites the files with the hosts, you should just include them in your actual config-files. I recommend a setup like this for an example network using the domain `mydmain.example.com` and the network `192.168.0.0/24`.
 
-**Note** This is just an example for illustration purposes, the important thing is that `hosts.conf` and `dhcphosts.conf` are included in the main zone configuration, and that `ptr-hosts.conf` is included in the reverse zone configuration. All file names and locations are configured in the config-file (except the `db.x.x.x.in-addr.arpa` file, which is always in the base config directory and named based on the IP addresses you set for the network). That being said, this is the type of setup I use, and it works nicely for me.
+**Note:** This is just an example for illustration purposes, the important thing is that `dhcphosts.conf` (and `hosts.conf` if you use it) are included in the main zone configuration, and that `ptr-hosts.conf` is included in the reverse zone configuration. All file names and locations are configured in the config-file (except the `db.x.x.x.in-addr.arpa` file, which is always in the base config directory and named based on the IP addresses you set for the network). That being said, this is the type of setup I use, and it works nicely for me.
 
 #### File/Directory structure
 ```
