@@ -1,0 +1,13 @@
+[package]
+name = "opnsense-bind9"
+version = "1.0.0"
+edition = "2021"
+authors = ["Roy W. Andersen <ensnared@gmail.com>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = "0.4.39"
+inline_colorization = "0.1.6"
+reqwest = { version = "0.11", features = ["blocking", "json"] }
+serde_json = "1.0"
