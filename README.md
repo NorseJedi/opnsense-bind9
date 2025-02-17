@@ -115,6 +115,9 @@ ns1             IN      A       192.168.0.53
 ns2             IN      A       192.168.0.54
 pihole          IN      A       192.168.0.55
 
+; Router
+opnsense        IN      A       192.168.0.1
+
 ; Other hosts
 $INCLUDE "/etc/bind/mydomain.example.com/hosts.conf";
 $INCLUDE "/etc/bind/mydomain.example.com/dhcphosts.conf"
