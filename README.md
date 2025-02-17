@@ -1,6 +1,8 @@
 # OPNSense Bind9 Host-sync
 This is a handy little utility I wrote when playing around with Bind9 as a DNS server for my local network. All it does is download the DHCP leases from OPNSense and generates Bind9 zone-files with those hosts, both A-records and PTR-records.
 
+Note that this is made for use with the ISC DHCPv4 server on OPNSense. It will not work with the ISC DHCPv6 server, and it probably won't work with the Kea DHCP server either.
+
 ## Building
 You'll need to have [rust](https://www.rust-lang.org/) installed.
 Simply run `cargo build -r` and the binary will be in `target/release/opnsense-bind9`
@@ -48,7 +50,7 @@ Since this program overwrites the files with the hosts, you should just include 
 ```
 The files `named.conf`, `named.conf.options` and `rndc.key` are not covered here, but in a default Bind9 setup, `named.conf` will have an include statement for `named.conf.local` and that's all that's needed with regards to this.
 
-The `hosts.conf` file here is included in `main.conf` and is just a file where you put any DNS records not handled by the OPNSense dhcp server. You could also just put them in the `main.conf` file, I just like to keep things separate. It's important however that any hosts you do define statically are put in `IGNORED_HOSTS` in the config-file, otherwise you'll get duplicates and Bind will yell at you.
+The `hosts.conf` file here is included in `main.conf` and is just a file where you put any DNS records not handled by the OPNSense DHCP server. You could also just put them in the `main.conf` file, I just like to keep things separate. It's important however that any hosts you do define statically are put in `IGNORED_HOSTS` in the config-file, otherwise you'll get duplicates and Bind will yell at you.
 
 #### Contents of `named.conf.local`:
 ```

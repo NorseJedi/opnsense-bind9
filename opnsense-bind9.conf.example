@@ -40,8 +40,8 @@ MAIN_CONF=mydomain.example.com/main.conf
 HOST_FILE=mydomain.example.com/dhcphosts.conf
 
 # The subnet prefix. Used for the reverse zone name and corresponding 
-# zone-file. If the network is 192.168.1.0/24 then this should be 192.168.1 
-# and the PTR Zone-file will become db.1.168.192.in-addr.arpa and located 
+# zone-file. If the network is 192.168.0.0/24 then this should be 192.168.0
+# and the PTR Zone-file will become db.0.168.192.in-addr.arpa and located
 # within BASE_DIR. Note that this file must exist, and it must contain a line 
 # with the serial number as described in MAIN_CONF above.
 SUBNET_PREFIX=192.168.1
